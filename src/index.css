@@ -5,7 +5,7 @@
 }
 /* fonts */
 
-@import url('https://fonts.googleapis.com/css?family=Fanwood+Text:400|Quattrocento:400');
+@import url('https://fonts.googleapis.com/css?family=Fanwood+Text:400|Quattrocento:400;700');
 
 html {
   font-size: 100%;
@@ -16,31 +16,44 @@ html {
   --bodyFont: 'Fanwood Text', serif;
   --smallText: 0.7em;
   /* primary */
-  --primary-100: #f7f5f3;
-  --primary-200: #ebe5e1;
-  --primary-300: #dfd6cf;
-  --primary-400: #c7b7ac;
-  --primary-500: #af9888;
-  --primary-600: #9e897a;
-  --primary-700: #837266;
-  --primary-800: #695b52;
-  --primary-900: #564a43;
+  --primary-100: #fefbf8;
+  --primary-200: #fbf5ee;
+  --primary-300: #f9efe4;
+  --primary-400: #f5e2cf;
+  --primary-500: #f0d6bb;
+  --primary-600: #d8c1a8;
+  --primary-700: #b4a18c;
+  --primary-800: #908070;
+  --primary-900: #76695c;
+
+  /* secondary */
+  --secondary-100: #f6f3f2;
+  --secondary-200: #e7e2df;
+  --secondary-300: #d9d0cc;
+  --secondary-400: #bdada5;
+  --secondary-500: #a08a7f;
+  --secondary-600: #907c72;
+  --secondary-700: #78685f;
+  --secondary-800: #60534c;
+  --secondary-900: #4e443e;
 
   /* grey */
-  --grey-50: #fefdfd;
-  --grey-100: #fcfcfb;
-  --grey-200: #f8f7f5;
-  --grey-300: #f3f2ef;
-  --grey-400: #ebe9e4;
-  --grey-500: #e2dfd8;
-  --grey-600: #cbc9c2;
-  --grey-700: #aaa7a2;
-  --grey-800: #888682;
-  --grey-900: #6f6d6a;
+  --grey-50: #f9fafb;
+  --grey-100: #f3f4f6;
+  --grey-200: #e5e7eb;
+  --grey-300: #d1d5db;
+  --grey-400: #9ca3af;
+  --grey-500: #6b7280;
+  --grey-600: #4b5563;
+  --grey-700: #374151;
+  --grey-800: #1f2937;
+  --grey-900: #111827;
 
-  /* --backgroundColor: #262626; */
-  --backgroundColor: var(--grey-100);
-  --textColor: var(--grey-900);
+  /* -- */
+
+  --backgroundColor: #262626;
+  /* --backgroundColor: var(--grey-100); */
+  --textColor: #f0d6bb;
 
   /* rest of the colors */
   --black: #222;
@@ -181,7 +194,8 @@ ul {
 /* buttons */
 .btn {
   cursor: pointer;
-  color: var(--white);
+  /* color: var(--white); */
+  color: var(--backgroundColor);
   background: var(--primary-500);
   border: transparent;
   border-radius: var(--borderRadius);
@@ -195,6 +209,7 @@ ul {
 .btn:hover {
   background: var(--primary-700);
   box-shadow: var(--shadow-3);
+  color: var(--white);
 }
 .btn-hipster {
   color: var(--primary-500);
