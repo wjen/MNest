@@ -10,7 +10,7 @@ const links = [
     url: '/about',
   },
   {
-    id: 1,
+    id: 3,
     text: 'products',
     url: '/products',
   },

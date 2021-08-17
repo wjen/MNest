@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
+import { links } from '../utils/constants';
 import logo from '../assets/mnest-logo.png';
+import CartButtons from './CartButtons';
 const Navbar = () => {
   return (
     <NavContainer>
@@ -10,37 +12,42 @@ const Navbar = () => {
         <div className='nav-header'>
           <Link to='/' className='logo-container'>
             <img src={logo} alt='logo' className='img logo-img' />
-            <h1 className='logo-title'>
+            <h2 className='logo-title'>
               Modern <span>Nest</span>
-            </h1>
+            </h2>
           </Link>
           <button className='nav-toggle btn'>
             <FaBars />
           </button>
         </div>
-        <ul className='links-container'>
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
-          <li>
-            <Link to='/'>About</Link>
-          </li>
-          <li>
-            <Link to='/'>Products</Link>
-          </li>
+        <ul className='nav-links'>
+          {links.map((link) => {
+            const { id, text, url } = link;
+            return (
+              <li key={id}>
+                <NavLink to={url} exact activeClassName='selected'>
+                  {text}
+                </NavLink>
+              </li>
+            );
+          })}
         </ul>
+        <CartButtons />
       </div>
-      {/* login component */}
     </NavContainer>
   );
 };
 
 const NavContainer = styled.nav`
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   .nav-center {
     width: 90vw;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 1rem 0;
   }
   .logo-container {
     display: flex;
@@ -55,21 +62,24 @@ const NavContainer = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 5rem;
   }
   .logo-img {
-    width: 100px;
+    width: 70px;
+    margin-left: -15px;
+
     display: inline-block;
   }
   .logo-title {
     color: var(--white);
     margin-bottom: 0;
     font-weight: 400;
+
+    span {
+      color: var(--primary-500);
+      font-weight: 700;
+    }
   }
-  .logo-title span {
-    color: var(--primary-500);
-    font-weight: 700;
-  }
+
   .nav-toggle {
     border: transparent;
     color: var(--primary-500);
@@ -82,10 +92,41 @@ const NavContainer = styled.nav`
       transform: scale(1.2);
     }
   }
+  .nav-links {
+    display: none;
+  }
 
-  .links-container {
-    height: 0;
-    overflow: hidden;
+  @media (min-width: 992px) {
+    .nav-toggle {
+      display: none;
+    }
+    .nav-center {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+
+      li {
+        margin: 0 0.5rem;
+      }
+      a {
+        color: var(--primary-500);
+        padding: 0.5rem;
+        letter-spacing: var(--letterSpacing);
+        text-transform: capitalize;
+
+        &:hover {
+          color: var(--primary-100);
+          border-bottom: 2px solid var(--primary-100);
+        }
+      }
+      .selected {
+        color: var(--primary-100);
+      }
+    }
   }
 `;
 export default Navbar;
