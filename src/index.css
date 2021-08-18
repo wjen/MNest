@@ -314,3 +314,9 @@ ul {
   margin: 0 auto;
   margin-top: -1rem;
 }
+
+/* pages */
+.page-100 {
+  height: calc(100vh - 10rem);
+  padding: 5rem 0;
+}

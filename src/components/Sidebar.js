@@ -10,7 +10,7 @@ import CartButtons from '../components/CartButtons';
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
   return (
-    <SidebarContainer>
+    <SidebarContainer> 
       <aside
         className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}
       >
