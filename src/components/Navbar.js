@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
 import { links } from '../utils/constants';
 import logo from '../assets/mnest-logo.png';
 import CartButtons from './CartButtons';
+import { useProductsContext } from '../context/products_context';
+
 const Navbar = () => {
+  const { openSidebar } = useProductsContext();
   return (
     <NavContainer>
       <div className='nav-center'>
@@ -16,7 +19,7 @@ const Navbar = () => {
               Modern <span>Nest</span>
             </h2>
           </Link>
-          <button className='nav-toggle btn'>
+          <button className='nav-toggle btn' onClick={openSidebar}>
             <FaBars />
           </button>
         </div>

@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useProductsContext } from '../context/products_context';
 import { links } from '../utils/constants';
 import logo from '../assets/mnest-logo.png';
 import { FaTimes } from 'react-icons/fa';
 import CartButtons from '../components/CartButtons';
 
 const Sidebar = () => {
-  const isOpen = true;
-  const toggleHandler = () => {
-    // setIsOpen(!isOpen);
-  };
+  const { isSidebarOpen, closeSidebar } = useProductsContext();
   return (
     <SidebarContainer>
-      <aside className={`${isOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
+      <aside
+        className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}
+      >
         <div className='sidebar-center'>
           <div className='sidebar-header'>
             <Link to='/' className='logo-container'>
@@ -22,7 +22,7 @@ const Sidebar = () => {
                 Modern <span>Nest</span>
               </h2>
             </Link>
-            <button type='button' className='close-btn' onClick={toggleHandler}>
+            <button type='button' className='close-btn' onClick={closeSidebar}>
               <FaTimes />
             </button>
           </div>
@@ -31,7 +31,12 @@ const Sidebar = () => {
               const { id, text, url } = link;
               return (
                 <li key={id}>
-                  <Link to={url} exact activeClassName='selected'>
+                  <Link
+                    to={url}
+                    exact
+                    activeClassName='selected'
+                    onClick={closeSidebar}
+                  >
                     {text}
                   </Link>
                 </li>
