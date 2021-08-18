@@ -34,8 +34,10 @@ const Wrapper = styled.div`
     letter-spacing: var(--letterSpacing);
     display: flex;
     align-items: center;
-    line-height: 1.15rem;
+    line-height: 1.15;
     border: 2px solid transparent;
+    transition: var(--transition);
+
     &:hover {
       color: var(--primary-100);
       border-bottom: 2px solid white;
@@ -70,9 +72,10 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     color: var(--primary-500);
+    font-size: 1.2rem;
     background: transparent;
     border-color: transparent;
-    font-size: 1.2rem;
+    transition: var(--transition);
 
     svg {
       height: 1.6rem;

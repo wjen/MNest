@@ -8,9 +8,10 @@ const Footer = () => {
       <h5>
         &copy; <span id='date'>{new Date().getFullYear()}</span>
         <span class='footer-logo'> Modern Nest </span>
-        Built by <a href='http://www.iamwenjen.com'> Wen Jen</a>
       </h5>
-      <p>All Rights Reserved</p>
+      <h5>
+        &nbsp; Built by <a href='http://www.iamwenjen.com'> Wen Jen</a>
+      </h5>
     </Wrapper>
   );
 };
@@ -29,13 +30,16 @@ const Wrapper = styled.footer`
   align-items: center;
   justify-content: center;
 
-  h5,
-  p {
+  h5 {
     margin: 0;
   }
   .footer-logo,
   a {
     color: var(--primary-500);
+  }
+
+  @media screen and (min-width: 992px) {
+    flex-direction: row;
   }
 `;
 

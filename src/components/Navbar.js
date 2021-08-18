@@ -52,7 +52,7 @@ const NavContainer = styled.nav`
 
   .nav-center {
     width: 90vw;
-    max-width: var(--max-width);
+    max-width: var(--maxWidth);
     margin: 0 auto;
   }
   .logo-container {
@@ -71,14 +71,11 @@ const NavContainer = styled.nav`
   }
   .logo-img {
     width: 70px;
-    margin-left: -15px;
-
     display: inline-block;
   }
   .logo-title {
     color: var(--white);
     margin-bottom: 0;
-    font-weight: 400;
 
     span {
       color: var(--primary-500);
