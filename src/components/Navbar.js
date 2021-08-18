@@ -43,6 +43,12 @@ const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--black);
+  background-image: linear-gradient(
+    to bottom,
+    var(--black),
+    var(--backgroundColor)
+  );
 
   .nav-center {
     width: 90vw;
@@ -95,6 +101,10 @@ const NavContainer = styled.nav`
   .nav-links {
     display: none;
   }
+  /* imported from cartbuttons  */
+  .cart-btns-wrapper {
+    display: none;
+  }
 
   @media (min-width: 992px) {
     .nav-toggle {
@@ -126,6 +136,9 @@ const NavContainer = styled.nav`
       .selected {
         color: var(--primary-100);
       }
+    }
+    .cart-btns-wrapper {
+      display: grid;
     }
   }
 `;
