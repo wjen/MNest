@@ -19,7 +19,7 @@ const Navbar = () => {
               Modern <span>Nest</span>
             </h2>
           </Link>
-          <button className='nav-toggle btn' onClick={openSidebar}>
+          <button className='nav-toggle' onClick={openSidebar}>
             <FaBars />
           </button>
         </div>
@@ -96,6 +96,7 @@ const NavContainer = styled.nav`
     }
     svg:hover {
       transform: scale(1.2);
+      color: var(--white);
     }
   }
   .nav-links {
