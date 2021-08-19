@@ -4,8 +4,10 @@ import PageHero from '../components/PageHero';
 const Products = () => {
   return (
     <main>
-      <PageHero title='Products' />
-      <Wrapper className='page section section-center'></Wrapper>
+      <PageHero title='Checkout' />
+      <Wrapper className='page section section-center'>
+        <h1>Checkout</h1>
+      </Wrapper>
     </main>
   );
 };

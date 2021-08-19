@@ -140,6 +140,7 @@ small,
   p {
     margin-bottom: 1.5rem;
     max-width: 40em;
+    font-size: 1.2rem;
   }
 
   h1,
@@ -222,7 +223,7 @@ ul {
   display: inline-block;
 }
 .btn:hover {
-  background: var(--primary-700);
+  background: var(--primary-900);
   box-shadow: var(--shadow-3);
   color: var(--white);
 }
@@ -338,5 +339,5 @@ ul {
 }
 /* page minus hero and nav */
 .page {
-  min-height: calc(100vh - (vh + 10rem));
+  min-height: calc(100vh - (20vh + 10rem));
 }
