@@ -32,6 +32,7 @@ const Wrapper = styled.section`
   display: grid;
   place-items: center;
   column-gap: 2rem;
+  padding-bottom: 4rem;
 
   .img-container {
     display: none;
