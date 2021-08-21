@@ -12,11 +12,16 @@ const Contact = () => {
             dolorum ullam excepturi et nam consequuntur! Sit amet consectetur
             adipisicing elit.
           </p>
-          <form className='contact-form'>
+          <form
+            className='contact-form'
+            action='https://formspree.io/f/mayalpay'
+            method='POST'
+          >
             <input
               type='email'
               className='form-input'
               placeholder='Enter email'
+              name='_replyto'
             />
             <button type='submit' className='submit-btn'>
               Subscribe

@@ -131,6 +131,11 @@ small,
 .text-small {
   font-size: var(--smallText);
 }
+
+.text-center {
+  text-align: center;
+}
+
 @media screen and (min-width: 992px) {
   body {
     font-weight: 400;
@@ -306,15 +311,14 @@ ul {
 }
 
 .loading {
+  margin: 0 auto;
+
   width: 6rem;
   height: 6rem;
   border: 5px solid var(--grey-400);
   border-radius: 50%;
   border-top-color: var(--primary-500);
   animation: spinner 0.6s linear infinite;
-}
-.loading {
-  margin: 0 auto;
 }
 
 /* title */

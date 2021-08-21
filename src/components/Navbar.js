@@ -46,13 +46,7 @@ const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--black);
-  background-image: linear-gradient(
-    to bottom,
-    var(--black),
-    var(--backgroundColor)
-  );
-
+  background: linear-gradient(black, transparent);
   .nav-center {
     width: 90vw;
     max-width: var(--maxWidth);

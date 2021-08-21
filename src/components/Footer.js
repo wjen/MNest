@@ -7,7 +7,7 @@ const Footer = () => {
     <Wrapper>
       <h5>
         &copy; <span id='date'>{new Date().getFullYear()}</span>
-        <span class='footer-logo'> Modern Nest </span>
+        <span className='footer-logo'> Modern Nest </span>
       </h5>
       <h5>
         &nbsp; Built by <a href='http://www.iamwenjen.com'> Wen Jen</a>
@@ -18,12 +18,7 @@ const Footer = () => {
 
 const Wrapper = styled.footer`
   height: 5rem;
-  background: var(--black);
-  background-image: linear-gradient(
-    to top,
-    var(--black),
-    var(--backgroundColor)
-  );
+  background: linear-gradient(360deg, black, transparent);
   color: var(--white);
   display: flex;
   flex-direction: column;

@@ -17,7 +17,9 @@ const Hero = () => {
           doloremque voluptatem ea sit temporibus. Sapiente repudiandae, fuga
           laudantium amet eum exercitationem?
         </p>
-        <Link className='btn hero-btn'>Shop Now</Link>
+        <Link to='/products' className='btn hero-btn'>
+          Shop Now
+        </Link>
       </article>
       <article className='img-container'>
         <img src={herobcg} alt='table' className='img main-img' />
@@ -32,7 +34,6 @@ const Wrapper = styled.section`
   display: grid;
   place-items: center;
   column-gap: 2rem;
-  padding-bottom: 4rem;
 
   .img-container {
     display: none;
@@ -60,7 +61,7 @@ const Wrapper = styled.section`
     }
     .main-img {
       width: 100%;
-      height: 550px;
+      height: 500px;
       position: relative;
       border-radius: var(--borderRadius);
     }

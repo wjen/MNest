@@ -10,7 +10,7 @@ import CartButtons from '../components/CartButtons';
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
   return (
-    <SidebarContainer> 
+    <SidebarContainer>
       <aside
         className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}
       >
@@ -31,12 +31,7 @@ const Sidebar = () => {
               const { id, text, url } = link;
               return (
                 <li key={id}>
-                  <Link
-                    to={url}
-                    exact
-                    activeClassName='selected'
-                    onClick={closeSidebar}
-                  >
+                  <Link to={url} onClick={closeSidebar}>
                     {text}
                   </Link>
                 </li>
