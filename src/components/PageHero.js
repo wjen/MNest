@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-const PageHero = ({ title }) => {
+const PageHero = ({ title, product }) => {
+  console.log(product);
   return (
     <Wrapper className='section'>
       <div className='section-center'>
         <h3>
           <Link to='/' className='breadcrumb'>
             Home
-          </Link>{' '}
-          / {title}
+          </Link>
+          {product && <Link to='/products'> / Products </Link>}/ {title}
         </h3>
       </div>
     </Wrapper>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PageHero from '../components/PageHero';
+import { PageHero } from '../components';
 import aboutImg from '../assets/hero-bcg.jpeg';
 const AboutPage = () => {
   return (
