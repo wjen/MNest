@@ -2,7 +2,14 @@ import React, { useEffect } from 'react';
 import { useParams, useHistory } from 'react-router';
 import styled from 'styled-components';
 import { useProductsContext } from '../context/products_context';
-import { Loading, Error, PageHero, ProductImages, Stars } from '../components';
+import {
+  Loading,
+  Error,
+  PageHero,
+  ProductImages,
+  Stars,
+  AddToCart,
+} from '../components';
 import { single_product_url as url } from '../utils/constants';
 import { Link } from 'react-router-dom';
 import { formatPrice } from '../utils/helpers';
@@ -49,6 +56,7 @@ const SingleProductPage = () => {
     id: sku,
     company,
     images,
+    colors,
   } = product;
 
   return (
@@ -78,7 +86,7 @@ const SingleProductPage = () => {
               {company}
             </p>
             <hr />
-            {stock > 0 && <button className='btn'>Add to cart</button>}
+            {stock > 0 && <AddToCart product={product} />}
           </section>
         </div>
       </div>
@@ -98,9 +106,12 @@ const Wrapper = styled.main`
   }
   .info {
     text-transform: capitalize;
+    display: grid;
+    width: 300px;
+
+    grid-template-columns: 125px 1fr;
     span {
-      width: 200px;
-      display: inline-block;
+      font-weight: 700;
     }
   }
   @media (min-width: 992px) {

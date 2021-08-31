@@ -4,10 +4,13 @@ import 'normalize.css';
 import './index.css';
 import App from './App';
 import { ProductsProvider } from './context/products_context';
+import { FilterProvider } from './context/filter_context';
 ReactDOM.render(
   <React.StrictMode>
     <ProductsProvider>
-      <App />
+      <FilterProvider>
+        <App />
+      </FilterProvider>
     </ProductsProvider>
   </React.StrictMode>,
   document.getElementById('root')

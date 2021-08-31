@@ -11,6 +11,13 @@ import Product from './Product.js';
 import PageHero from './PageHero.js';
 import ProductImages from './ProductImages.js';
 import Stars from './Stars.js';
+import AddToCart from './AddToCart.js';
+import AmountButtons from './AmountButtons.js';
+import ProductList from './ProductList.js';
+import Filters from './Filters.js';
+import Sort from './Sort.js';
+import GridView from './GridView.js';
+import ListView from './ListView.js';
 
 export {
   Navbar,
@@ -26,4 +33,11 @@ export {
   PageHero,
   ProductImages,
   Stars,
+  AddToCart,
+  AmountButtons,
+  ProductList,
+  Filters,
+  Sort,
+  GridView,
+  ListView,
 };
