@@ -36,7 +36,7 @@ const Wrapper = styled.section`
   img {
     height: 200px;
     width: 300px;
-    border-radius: var(--radius);
+    border-radius: var(--borderRadius);
     margin-bottom: 1rem;
   }
   .price {

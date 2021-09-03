@@ -24,6 +24,9 @@ const Wrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  left: 0;
+  bottom: 0;
 
   h5 {
     margin: 0;

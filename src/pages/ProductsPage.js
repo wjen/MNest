@@ -5,8 +5,8 @@ const Products = () => {
   return (
     <main>
       <PageHero title='Products' />
-      <Wrapper className='page section-center'>
-        <div className='products'>
+      <Wrapper className='page'>
+        <div className='products section-center'>
           <Filters />
           <div>
             <Sort />
@@ -21,8 +21,13 @@ const Products = () => {
 const Wrapper = styled.section`
   .products {
     display: grid;
-    grid-template-columns: 150px 1fr;
-    margin: 2rem 0;
+    gap: 3rem 1.5rem;
+    margin: 4rem auto;
+  }
+  @media (min-width: 768px) {
+    .products {
+      grid-template-columns: 200px 1fr;
+    }
   }
 `;
 export default Products;

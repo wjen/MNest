@@ -40,7 +40,7 @@ const SingleProductPage = () => {
   }, [error]);
 
   if (loading) {
-    return <Loading />;
+    return <Loading className='page' />;
   }
   if (error) {
     return <Error />;
@@ -62,7 +62,7 @@ const SingleProductPage = () => {
   return (
     <Wrapper>
       <PageHero title={name} product />
-      <div className='section section-center'>
+      <div className='section section-center page'>
         <Link to='/products' className='btn'>
           Go Back
         </Link>
