@@ -196,7 +196,7 @@ ul {
 }
 /* section */
 .section {
-  padding: 4rem 0;
+  padding: 3rem 0;
 }
 .section-center {
   width: 90vw;
@@ -337,12 +337,12 @@ ul {
 }
 
 /* page */
-/* page minus nav */
+/* page minus nav and footer*/
 .page-100 {
-  height: calc(100vh - 10rem);
-  padding: 4rem 0;
+  min-height: calc(100vh - 10rem);
+  padding: 5rem 0;
 }
-/* page minus hero and nav */
+/* page minus hero and nav and footer */
 .page {
   min-height: calc(100vh - (20vh + 10rem));
 }

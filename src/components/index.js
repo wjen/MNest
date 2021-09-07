@@ -18,6 +18,10 @@ import Filters from './Filters.js';
 import Sort from './Sort.js';
 import GridView from './GridView.js';
 import ListView from './ListView.js';
+import CartContent from './CartContent.js';
+import CartColumns from './CartColumns.js';
+import CartTotals from './CartTotals.js';
+import CartItem from './CartItem.js';
 
 export {
   Navbar,
@@ -40,4 +44,8 @@ export {
   Sort,
   GridView,
   ListView,
+  CartContent,
+  CartColumns,
+  CartTotals,
+  CartItem,
 };

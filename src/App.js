@@ -8,6 +8,7 @@ import {
   ProductsPage,
   SingleProductPage,
   CheckoutPage,
+  CartPage,
 } from './pages';
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/about' exact component={AboutPage} />
         <Route path='/products' exact component={ProductsPage} />
         <Route path='/products/:id' exact component={SingleProductPage} />
+        <Route path='/cart' exact component={CartPage} />
         <Route path='/checkout' exact component={CheckoutPage} />
         <Route path='*' exact component={ErrorPage} />
       </Switch>

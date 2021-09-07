@@ -8,7 +8,7 @@ const AddToCart = ({ product }) => {
   const { addToCart } = useCartContext();
   const { id, stock, colors } = product;
   const [mainColor, setMainColor] = useState(colors[0]);
-
+  const [error, setError] = useState('');
   const [amount, setAmount] = useState(1);
 
   const increase = () => {
@@ -16,6 +16,7 @@ const AddToCart = ({ product }) => {
       let tempAmount = oldAmount + 1;
       if (tempAmount > stock) {
         tempAmount = stock;
+        setError('Quantity limit reached');
       }
       return tempAmount;
     });
@@ -23,6 +24,7 @@ const AddToCart = ({ product }) => {
   const decrease = () => {
     setAmount((oldAmount) => {
       let tempAmount = oldAmount - 1;
+      setError('');
       if (tempAmount < 1) {
         tempAmount = 1;
       }
@@ -56,10 +58,11 @@ const AddToCart = ({ product }) => {
           increase={increase}
           amount={amount}
         />
+        {error && <p>{error}</p>}
         <Link
           to='/cart'
           className='btn'
-          onClick={() => addToCart({ id, mainColor, amount, product })}
+          onClick={() => addToCart(id, mainColor, amount, product)}
         >
           Add to Cart
         </Link>
@@ -70,6 +73,7 @@ const AddToCart = ({ product }) => {
 
 const Wrapper = styled.section`
   margin-top: 2rem;
+
   .colors {
     display: grid;
     grid-template-columns: 125px 1fr;
@@ -104,6 +108,14 @@ const Wrapper = styled.section`
   }
   .btn-container {
     margin-top: 2rem;
+  }
+  .btn {
+    margin-top: 1rem;
+  }
+  p {
+    width: max-content;
+    font-size: 1rem;
+    color: red;
   }
 `;
 export default AddToCart;

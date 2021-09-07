@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 const AmountButtons = ({ decrease, increase, amount }) => {
   return (
-    <Wrapper>
+    <Wrapper className='amount-btns'>
       <button onClick={decrease}>
         <FaMinus />
       </button>
@@ -21,10 +21,10 @@ const Wrapper = styled.div`
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
   width: 150px;
-  
+
   svg,
   h2 {
-    color: var(--white)
+    color: var(--white);
   }
   h2 {
     margin-bottom: 0;
@@ -38,9 +38,7 @@ const Wrapper = styled.div`
     background: var(--backgroundColor);
     border-color: transparent;
     cursor: pointer;
-  } 
   }
-  margin-bottom: 1rem;
 `;
 
 export default AmountButtons;

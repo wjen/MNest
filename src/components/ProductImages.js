@@ -4,7 +4,6 @@ import styled from 'styled-components';
 // set images as [] to prevent error when empty intially
 const ProductImages = ({ images = [{ url: '' }] }) => {
   const [main, setMain] = useState(images[0]);
-  console.log(images);
   return (
     <Wrapper>
       <img src={main.url} alt='main img' className='img main' />
