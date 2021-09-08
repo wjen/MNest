@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useProductsContext } from '../context/products_context';
+import { useUserContext } from '../context/user_context';
 import { links } from '../utils/constants';
 import logo from '../assets/mnest-logo.png';
 import { FaTimes } from 'react-icons/fa';
@@ -9,6 +10,7 @@ import CartButtons from '../components/CartButtons';
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
+  const { myUser } = useUserContext();
   return (
     <SidebarContainer>
       <aside
@@ -37,9 +39,11 @@ const Sidebar = () => {
                 </li>
               );
             })}
-            <li>
-              <Link to='/checkout'>Checkout</Link>
-            </li>
+            {myUser && (
+              <li>
+                <Link to='/checkout'>Checkout</Link>
+              </li>
+            )}
           </ul>
           <CartButtons />
         </div>

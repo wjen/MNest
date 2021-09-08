@@ -3,8 +3,11 @@ import styled from 'styled-components';
 import { useCartContext } from '../context/cart_context';
 import { formatPrice } from '../utils/helpers';
 import { Link } from 'react-router-dom';
+import { useUserContext } from '../context/user_context';
+
 const CartTotals = () => {
   const { total_amount, shipping_fee } = useCartContext();
+  const { myUser, loginWithRedirect } = useUserContext();
   return (
     <Wrapper>
       <div>
@@ -20,9 +23,19 @@ const CartTotals = () => {
             Order total: <span>{formatPrice(total_amount + shipping_fee)}</span>
           </h4>
         </article>
-        <Link to='/checkout' className='btn btn-block text-center'>
-          Proceed to checkout
-        </Link>
+        {myUser ? (
+          <Link to='/checkout' className='btn btn-block text-center'>
+            Proceed to checkout
+          </Link>
+        ) : (
+          <button
+            type='button'
+            onClick={loginWithRedirect}
+            className='btn btn-block'
+          >
+            Login
+          </button>
+        )}
       </div>
     </Wrapper>
   );
@@ -56,6 +69,7 @@ const Wrapper = styled.section`
   .btn {
     margin-top: 1rem;
     font-weight: 700;
+    line-height: inherit;
   }
   @media (min-width: 776px) {
     justify-content: end;

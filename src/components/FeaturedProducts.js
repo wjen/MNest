@@ -1,4 +1,3 @@
-import { product } from 'prelude-ls';
 import React from 'react';
 import styled from 'styled-components';
 import { Loading, Error, Product } from '../components';

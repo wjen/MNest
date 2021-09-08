@@ -6,7 +6,13 @@ import React, {
   useState,
 } from 'react';
 import reducer from '../reducers/cart_reducer';
-import { ADD_TO_CART, CLEAR_CART, REMOVE_ITEM } from '../actions';
+import {
+  ADD_TO_CART,
+  CLEAR_CART,
+  COUNT_CART_TOTALS,
+  REMOVE_ITEM,
+  TOGGLE_CART_ITEM_AMOUNT,
+} from '../actions';
 const CartContext = createContext();
 
 const getLocalStorage = () => {
@@ -35,9 +41,12 @@ export const CartProvider = ({ children }) => {
   const removeItem = (id) => {
     dispatch({ type: REMOVE_ITEM, payload: id });
   };
-  const toggleAmount = (id, value) => {};
+  const toggleAmount = (id, value) => {
+    dispatch({ type: TOGGLE_CART_ITEM_AMOUNT, payload: { id, value } });
+  };
 
   useEffect(() => {
+    dispatch({ type: COUNT_CART_TOTALS });
     localStorage.setItem('cart', JSON.stringify(state.cart));
   }, [state.cart]);
   return (

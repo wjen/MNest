@@ -29,6 +29,9 @@ const ListView = ({ products }) => {
 const Wrapper = styled.section`
   display: grid;
   gap: 2rem;
+  .product-container {
+    margin-bottom: 1rem;
+  }
   h4,
   h5 {
     margin-bottom: 0.5rem;
@@ -46,12 +49,16 @@ const Wrapper = styled.section`
     margin-top: 0;
     color: var(--grey-300);
   }
+
   @media (min-width: 992px) {
     .product-container {
       display: grid;
       grid-template-columns: auto 1fr;
       place-items: center;
       column-gap: 2rem;
+    }
+    img {
+      margin-bottom: 0;
     }
   }
 `;

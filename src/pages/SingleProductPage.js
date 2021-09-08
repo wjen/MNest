@@ -56,7 +56,6 @@ const SingleProductPage = () => {
     id: sku,
     company,
     images,
-    colors,
   } = product;
 
   return (

@@ -3,22 +3,39 @@ import { Link } from 'react-router-dom';
 import { FaShoppingCart, FaUserPlus, FaUserMinus } from 'react-icons/fa';
 import styled from 'styled-components';
 import { useProductsContext } from '../context/products_context';
+import { useCartContext } from '../context/cart_context';
+import { useUserContext } from '../context/user_context';
 const CartButtons = () => {
   const { closeSidebar } = useProductsContext();
+  const { total_items } = useCartContext();
+  const { loginWithRedirect, logout, myUser } = useUserContext();
 
   return (
     <Wrapper className='cart-btns-wrapper'>
       <Link to='/cart' className='cart-btn'>
-        Cart
         <span className='cart-container' onClick={closeSidebar}>
+          Cart
           <FaShoppingCart />
-          <span className='cart-qty'>2</span>
+          <span className='cart-qty'>{total_items}</span>
         </span>
       </Link>
-      <button type='button' className='auth-btn' onClick={closeSidebar}>
-        Login
-        <FaUserPlus />
-      </button>
+      {myUser ? (
+        <button
+          type='button'
+          className='auth-btn'
+          onClick={() => {
+            logout({ returnTo: window.location.origin });
+          }}
+        >
+          Logout
+          <FaUserMinus />
+        </button>
+      ) : (
+        <button type='button' className='auth-btn' onClick={loginWithRedirect}>
+          Login
+          <FaUserPlus />
+        </button>
+      )}
     </Wrapper>
   );
 };
@@ -57,7 +74,7 @@ const Wrapper = styled.div`
   }
   .cart-qty {
     position: absolute;
-    top: -10px;
+    top: -16px;
     right: -16px;
     width: 16px;
     height: 16px;

@@ -6,9 +6,11 @@ import { links } from '../utils/constants';
 import logo from '../assets/mnest-logo.png';
 import CartButtons from './CartButtons';
 import { useProductsContext } from '../context/products_context';
+import { useUserContext } from '../context/user_context';
 
 const Navbar = () => {
   const { openSidebar } = useProductsContext();
+  const { myUser } = useUserContext();
   return (
     <NavContainer>
       <div className='nav-center'>
@@ -34,6 +36,13 @@ const Navbar = () => {
               </li>
             );
           })}
+          {myUser && (
+            <li>
+              <NavLink to='/checkout' activeClassName='selected'>
+                Checkout
+              </NavLink>
+            </li>
+          )}
         </ul>
         <CartButtons />
       </div>

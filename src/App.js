@@ -10,6 +10,7 @@ import {
   CheckoutPage,
   CartPage,
 } from './pages';
+import ProtectedRoute from './auth/ProtectedRoute';
 function App() {
   return (
     <Router>
@@ -21,7 +22,7 @@ function App() {
         <Route path='/products' exact component={ProductsPage} />
         <Route path='/products/:id' exact component={SingleProductPage} />
         <Route path='/cart' exact component={CartPage} />
-        <Route path='/checkout' exact component={CheckoutPage} />
+        <ProtectedRoute path='/checkout' exact component={CheckoutPage} />
         <Route path='*' exact component={ErrorPage} />
       </Switch>
       <Footer />
