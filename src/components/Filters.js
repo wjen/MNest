@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useFilterContext } from '../context/filter_context';
 import { getUniqueValues, formatPrice } from '../utils/helpers';
@@ -27,16 +27,23 @@ const Filters = () => {
   const sidebarRef = useRef(null);
 
   // set up nike.com-like sidebar scroll
+  function resizeSidebar() {
+    const sidebarCoords = sidebarRef.current.getBoundingClientRect();
+    sidebarRef.current.style.maxHeight = `${
+      window.innerHeight - sidebarCoords.top
+    }px`;
+  }
   useEffect(() => {
-    function resizeSidebar() {
-      const sidebarCoords = sidebarRef.current.getBoundingClientRect();
-      sidebarRef.current.style.maxHeight = `${
-        window.innerHeight - sidebarCoords.top
-      }px`;
-    }
     const event = window.addEventListener('scroll', resizeSidebar);
 
     return () => window.removeEventListener('scroll', resizeSidebar);
+  }, [window.innerHeight]);
+
+  // fixes bug, adjusts when screen size changes after scroll
+  useEffect(() => {
+    window.addEventListener('resize', resizeSidebar);
+
+    return () => window.removeEventListener('resize', resizeSidebar);
   }, []);
   return (
     <Wrapper>

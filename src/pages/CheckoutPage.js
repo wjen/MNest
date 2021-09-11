@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PageHero from '../components/PageHero';
-const Products = () => {
+const CheckoutPage = () => {
   return (
     <main>
       <PageHero title='Checkout' />
@@ -12,5 +12,10 @@ const Products = () => {
   );
 };
 
-const Wrapper = styled.section``;
-export default Products;
+const Wrapper = styled.section`
+  h1 {
+    color: white;
+    background: white;
+  }
+`;
+export default CheckoutPage;
