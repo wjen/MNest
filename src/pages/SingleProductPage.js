@@ -27,6 +27,7 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
+    // eslint-disable-next-line
   }, [id]);
 
   // Redirect home automatically in three seconds if error
@@ -37,6 +38,7 @@ const SingleProductPage = () => {
       }, 3000);
       return () => clearTimeout(timeout);
     }
+    // eslint-disable-next-line
   }, [error]);
 
   if (loading) {

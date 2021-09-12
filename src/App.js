@@ -12,7 +12,7 @@ import {
   PrivateRoute,
   AuthWrapper,
 } from './pages';
-import ProtectedRoute from './auth/ProtectedRoute';
+// import ProtectedRoute from './auth/ProtectedRoute';
 function App() {
   return (
     <AuthWrapper>

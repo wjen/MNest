@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { useFilterContext } from '../context/filter_context';
 import { getUniqueValues, formatPrice } from '../utils/helpers';
@@ -34,10 +34,10 @@ const Filters = () => {
     }px`;
   }
   useEffect(() => {
-    const event = window.addEventListener('scroll', resizeSidebar);
+    window.addEventListener('scroll', resizeSidebar);
 
     return () => window.removeEventListener('scroll', resizeSidebar);
-  }, [window.innerHeight]);
+  }, []);
 
   // fixes bug, adjusts when screen size changes after scroll
   useEffect(() => {

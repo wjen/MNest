@@ -81,13 +81,18 @@ const Wrapper = styled.article`
     }
   }
   .remove-btn {
-    color: red;
+    color: var(--red-light);
     background: transparent;
     border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: var(--transition);
+    font-size: 1.2rem;
+    &:hover {
+      color: red;
+    }
   }
 
   .price,

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
@@ -30,7 +30,12 @@ const Navbar = () => {
             const { id, text, url } = link;
             return (
               <li key={id}>
-                <NavLink to={url} exact activeClassName='selected'>
+                <NavLink
+                  to={url}
+                  exact
+                  activeClassName='selected'
+                  className='nav-link'
+                >
                   {text}
                 </NavLink>
               </li>
@@ -38,7 +43,11 @@ const Navbar = () => {
           })}
           {myUser && (
             <li>
-              <NavLink to='/checkout' activeClassName='selected'>
+              <NavLink
+                to='/checkout'
+                activeClassName='selected'
+                className='nav-link'
+              >
                 Checkout
               </NavLink>
             </li>
@@ -105,6 +114,7 @@ const NavContainer = styled.nav`
   .nav-links {
     display: none;
   }
+
   /* imported from cartbuttons  */
   .cart-btns-wrapper {
     display: none;

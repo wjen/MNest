@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { PageHero, CartContent } from '../components';
 
 const CartPage = () => {
-  const { cart, total_items, total_amount } = useCartContext();
+  const { cart } = useCartContext();
   if (cart.length < 1) {
     return (
       <section className='page-100 section-center text-center'>
