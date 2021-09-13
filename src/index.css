@@ -346,3 +346,7 @@ ul {
 .page {
   min-height: calc(100vh - (20vh + 10rem));
 }
+
+.main-section {
+  background: var(--white);
+}
